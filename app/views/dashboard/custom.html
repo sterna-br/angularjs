@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-2">
+    <select id="categorias" class="form-control" ng-model="tipo" ng-options="c as c for c in tipos" ng-change="findCategoria()">
+      <option value="">-- Base --</option>
+    </select>
+  </div>
+  <div class="col-md-5">
+    <select id="categorias" class="form-control" ng-model="category" ng-options="c as c for c in categorys" ng-change="findGrupo()">
+      <option value="">-- Categorias --</option>
+    </select>
+  </div>
+  <div class="col-md-5">
+    <select id="licenciamento" class="form-control" ng-model="group" ng-options="c as c for c in groups" ng-change="findDados()">
+      <option value="">-- Grupos --</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <leaflet controls="controls" lf-center="center" defaults="defaults" geojson="geojson" layers="layers" height="600px" width="100%"></leaflet>
+</div>

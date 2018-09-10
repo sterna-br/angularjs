@@ -1,0 +1,53 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Home</li>
+  <li class="breadcrumb-item">
+    <a href="#">Admin</a>
+  </li>
+  <li class="breadcrumb-item active">Dashboard</li>
+
+  <li class="breadcrumb-menu d-md-down-none">
+    <div class="btn-group" role="group" aria-label="Button group">
+      <a class="btn" href="#">
+        <i class="icon-speech"></i>
+      </a>
+      <a class="btn" href="./">
+        <i class="icon-graph"></i> &nbsp;Dashboard</a>
+      <a class="btn" href="#">
+        <i class="icon-settings"></i> &nbsp;Settings</a>
+    </div>
+  </li>
+</ol>
+<div class="container-fluid">
+  <div class="animated fadeIn">
+    <div class="card">
+      <form name="loginForm" ng-controller="AuthController" ng-submit="login(credentials)" novalidate>
+        <div class="card-header">
+          <h4 class="">
+            <img alt="Citrino" src="images/catalogo.png" style="width: 12em;">
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="col-sm-4">
+            <p>
+              <label for="username">CPF</label>
+              <input id="username" type="text" class="form-control" ng-model="credentials.username" autofill="autofill" />
+              <span id="username-message" class="text-danger"></span>
+            </p>
+            <p>
+              <label for="password">Senha</label>
+              <input id="password" type="password" class="form-control" ng-model="credentials.password" autofill="autofill" />
+              <span id="password-message" class="text-danger"></span>
+            </p>
+
+          </div>
+        </div>
+        <div class="card-footer">
+          <p>
+            <button id="login" class="btn btn-success" type="submit">Entrar</button>
+          </p>
+          <div id="message" class="text-danger"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

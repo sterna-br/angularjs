@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="pt-br" manifest="manifest.appcache" ng-cloak>
+
+<head>
+
+  <title>Sterna - Exemplo</title>
+  <meta name="description" content="Serviço de Informações Geoespaciais de Governo">
+  <meta name="keywords" content="JAVA,JEE7,HTML5,CSS,XML,JavaScript,AngularJS,Demoiselle,Framework,Geoespaciais,Geolocalização,Mapa,Governo,SERPRO,GEO,Endereço,Geocoding,longitude,latitude">
+  <meta charset="utf-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#777777" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="windows-web-app-capable" content="yes">
+  <meta name="web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="google-site-verification" content="8dY9WhsU4G3rTPibyv_tjSjFjs1KEUzmu_hemMN3CXw" />
+  <meta name="msvalidate.01" content="8319947490B908A27A479550B84A851D" />
+  <meta name="Robots" content="index, follow">
+
+  <link rel="canonical" href="https://sterna.estaleiro.serpro.gov.br/" />
+
+  <link rel="publisher" href="https://github.com/PauloGladson" />
+  <meta name="author" content="PauloGladson">
+  <link type="text/plain" rel="author" href="/humans.txt" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Sterna" />
+  <meta property="og:type" content="SoftwareApplication" />
+  <meta property="og:title" content="Sterna" />
+  <meta property="og:description" content="Serviço de Geolocalização do SERPRO" />
+  <meta property="og:url" content="https://sterna.estaleiro.serpro.gov.br/" />
+  <meta property="og:image" content="https://sterna.estaleiro.serpro.gov.br/img/logo-sterna-sem-nome.png" />
+  <meta property="article:published_time" content="2017-03-01" />
+  <meta property="article:modified_time" content="2017-07-29" />
+  <meta property="article:tag" content="Sterna" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@serpro">
+  <meta name="twitter:site" content="sterna.estaleiro.serpro.gov.br">
+  <meta name="twitter:domain" content="sterna.estaleiro.serpro.gov.br">
+  <meta name="twitter:title" content="Sterna">
+  <meta name="twitter:description" content="Serviço de Geolocalização do SERPRO">
+  <meta property="og:image" content="https://sterna.estaleiro.serpro.gov.br/img/logo-sterna-sem-nome.png">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="apple-touch-icon" sizes="192x192" href="img/ios/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/android/android-launchericon-512-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/android/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css' />
+  <link rel='stylesheet' href='bower_components/font-awesome/css/font-awesome.css' />
+  <link rel='stylesheet' href='bower_components/leaflet/dist/leaflet.css' />
+  <link rel='stylesheet' href='bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.css' />
+  <link rel='stylesheet' href='bower_components/leaflet.markercluster/dist/MarkerCluster.css' />
+  <link rel='stylesheet' href='bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css' />
+  <link rel='stylesheet' href='bower_components/magnific-popup/dist/magnific-popup.css' />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/creative.min.css">
+
+  <!-- endbuild -->
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="page-top" ng-controller="AuthController">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <img src="/img/logo-sterna-sem-nome.png" style="width: 77px;"> Sterna
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#example">Exemplos</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <section id="example" class="bg-dark">
+
+    <div class="row">
+      <div class="col-lg-2">
+        <ul>
+          <li>
+            <a href="#!health">
+              <i class='fa fa-search-plus'></i>
+              <span>Saúde</span>
+            </a>
+          </li>
+          <li>
+            <a href="#!school">
+              <i class='fa fa-search-plus'></i>
+              <span>Escolas</span>
+            </a>
+          </li>
+          <li>
+            <a href="#!gastronomy">
+              <i class='fa fa-search-plus'></i>
+              <span>Gastronomia</span>
+            </a>
+          </li>
+          <li>
+            <a href="#!financial">
+              <i class='fa fa-search-plus'></i>
+              <span>Financeiro</span>
+            </a>
+          </li>
+          <li>
+            <a href="#!government">
+              <i class='fa fa-search-plus'></i>
+              <span>Cartório</span>
+            </a>
+          </li>
+          <li>
+            <a href="#!policia">
+              <i class='fa fa-search-plus'></i>
+              <span>Polícia</span>
+            </a>
+          </li>
+          <li>
+            <a href="#!domingo">
+              <i class='fa fa-search-plus'></i>
+              <span>Domingo</span>
+            </a>
+          </li>
+          <br>
+          <br>
+          <li>
+            <a href="#!custom">
+              <i class='fa fa-search-plus'></i>
+              <span>Personalizado</span>
+            </a>
+            <br>
+
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9" ng-view>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Quer saber mais?</h2>
+          <hr class="my-4">
+          <p class="mb-5">Entre em contato </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+          <p>
+            <a href="mailto:sterna@serpro.gov.br">sterna@serpro.gov.br</a>
+          </p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fa fa-gear fa-3x mb-3 sr-contact"></i>
+          <p>
+            <a href="https://sterna.estaleiro.serpro.gov.br">Portal</a>
+          </p>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fa fa-github fa-3x mb-3 sr-contact"></i>
+          <p>
+            <a href="https://github.com/sterna-br">Github</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+  <script src="bower_components/es5-shim/es5-shim.js"></script>
+  <script src="bower_components/angular-locale-pt-br/angular-locale_pt-br.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+  <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+  <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+  <script src="bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+  <script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+  <script src="bower_components/json3/lib/json3.js"></script>
+  <script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
+  <script src="bower_components/scrollreveal/dist/scrollreveal.js"></script>
+  <script src="bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
+  <script src="bower_components/jquery-easing/jquery.easing.js"></script>
+  <script src="bower_components/jquery-easing/jquery.easing.min.js"></script>
+  <script src="bower_components/angular-google-analytics/dist/angular-google-analytics.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/theme.js -->
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <!-- injector:js -->
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/config.js"></script>
+  <script src="/scripts/controllers/application.js"></script>
+  <script src="/scripts/controllers/auth.js"></script>
+  <script src="/scripts/controllers/custom.js"></script>
+  <script src="/scripts/controllers/dashboard.js"></script>
+  <script src="/scripts/controllers/domingo.js"></script>
+  <script src="/scripts/controllers/financial.js"></script>
+  <script src="/scripts/controllers/gastronomy.js"></script>
+  <script src="/scripts/controllers/government.js"></script>
+  <script src="/scripts/controllers/health.js"></script>
+  <script src="/scripts/controllers/policia.js"></script>
+  <script src="/scripts/controllers/school.js"></script>
+  <script src="/scripts/creative.js"></script>
+  <script src="/scripts/directives/directives.js"></script>
+  <script src="/scripts/filters/filters.js"></script>
+  <script src="/scripts/services/alert.js"></script>
+  <script src="/scripts/services/app.js"></script>
+  <script src="/scripts/services/auth.js"></script>
+  <script src="/scripts/services/category.js"></script>
+  <script src="/scripts/services/validation.js"></script>
+  <!-- endinjector -->
+  <!-- endbuild -->
+
+
+</body>
+
+</html>
