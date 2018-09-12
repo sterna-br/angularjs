@@ -170,17 +170,32 @@ app.controller('GastronomyController', [
             osm: {
               name: 'OpenStreetMap',
               url: 'https://dev-sterna.estaleiro.serpro.gov.br/geo/api/tiles/OSM/{z}/{x}/{y}.png',
-              type: 'xyz'
+              type: 'xyz',
+              layerOptions: {
+                subdomains: ['a', 'b', 'c'],
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                continuousWorld: true
+              }
             },
             otm: {
               name: 'OpenTopoMap',
               url: 'https://dev-sterna.estaleiro.serpro.gov.br/geo/api/tiles/OTM/{z}/{x}/{y}.png',
-              type: 'xyz'
+              type: 'xyz',
+              layerOptions: {
+                subdomains: ['a', 'b', 'c'],
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                continuousWorld: true
+              }
             },
             lite: {
               name: 'OpenLiteMap',
               url: 'https://dev-sterna.estaleiro.serpro.gov.br/geo/api/tiles/LITE/{z}/{x}/{y}.png',
-              type: 'xyz'
+              type: 'xyz',
+              layerOptions: {
+                subdomains: ['a', 'b', 'c'],
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                continuousWorld: true
+              }
             },
             natgeo: {
               name: 'NatGeo',
